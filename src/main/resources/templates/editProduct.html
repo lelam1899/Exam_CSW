@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Update User</h1>
+<div class="col-md-auto">
+    <form th:object="${product}" th:action="@{update}" action="#" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <div>
+            <label th:text="Name" th:for="name"></label>
+            <input type="text" th:field="*{name}"
+                   class="form-control" placeholder="Name"/>
+            <span th:if="${#fields.hasErrors('name')}"
+                  th:errors="*{name}">Name Error</span>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <div>
+            <label th:text="Price" th:for="price"></label>
+            <input type="text" th:field="*{price}" class="form-control"
+                   placeholder="Price"/>
+            <span th:if="${#fields.hasErrors('price')}"
+                  th:errors="*{price}">Name Error</span>
+
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <div>
+            <label th:text="Quantity" th:for="quantity"></label>
+            <input type="text" th:field="*{quantity}" class="form-control"
+                   placeholder="Quantity"/>
+            <span th:if="${#fields.hasErrors('quantity')}"
+                  th:errors="*{Quantity}">Name Error</span>
+
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <!--            <input type="submit" class="btn btn-success" value="Save"/>-->
+        <div><button type="submit">Update</button></div>
+    </form>
+</div>
+</body>
+</html>
